@@ -2,6 +2,8 @@
 
 Spring AI 기반 RAG(Retrieval-Augmented Generation) 채팅 애플리케이션입니다.
 Ollama 로컬 LLM과 벡터 스토어를 활용하여 문서 기반 질의응답을 제공합니다.
+<img width="3835" height="2058" alt="스크린샷 2026-02-08 030038" src="https://github.com/user-attachments/assets/cd228118-9352-4ddd-bc72-af271d45274b" />
+
 
 ## 기술 스택
 
