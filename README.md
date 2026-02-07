@@ -1,9 +1,8 @@
 # RAG Chat
 
-Spring AI 기반 RAG(Retrieval-Augmented Generation) 채팅 애플리케이션입니다.
+Spring AI 기반 RAG(Retrieval-Augmented Generation) 채팅 애플리케이션입니다.  
 Ollama 로컬 LLM과 벡터 스토어를 활용하여 문서 기반 질의응답을 제공합니다.
 <img width="3835" height="2058" alt="스크린샷 2026-02-08 030038" src="https://github.com/user-attachments/assets/cd228118-9352-4ddd-bc72-af271d45274b" />
-
 
 ## 기술 스택
 
@@ -71,7 +70,7 @@ app.vectorstore.in-memory.enabled: false
 
 **In-Memory 사용**
 
-Elasticsearch 없이 테스트하실 경우 아래와 같이 설정해 주세요.
+Elasticsearch 없이 테스트하실 경우 아래와 같이 설정하시면 됩니다.
 
 ```yaml
 app.vectorstore.in-memory.enabled: true
@@ -85,7 +84,7 @@ app.vectorstore.in-memory.enabled: true
 app.etl.pipeline.init: true
 ```
 
-문서가 이미 로드된 경우 `false`로 변경하여 중복 로드를 방지해 주세요.
+문서가 이미 로드된 경우 `false`로 변경하여 중복 로드를 방지하시기 바랍니다.
 
 ### 4. 앱 시작
 
@@ -97,7 +96,7 @@ app.etl.pipeline.init: true
 
 ### 웹 UI
 
-브라우저에서 `http://localhost:8080`에 접속해 주세요.
+브라우저에서 `http://localhost:8080`에 접속하시면 됩니다.
 
 - **Stream / Call**: 응답 모드를 선택합니다 (스트리밍 또는 일괄 응답)
 - **대화 ID**: 대화별 메모리를 구분하는 식별자입니다
@@ -170,15 +169,15 @@ app.cli.enabled: true
 
 ### 주요 설정값
 
-| 설정                    | 기본값   | 설명                         |
-|-----------------------|-------|----------------------------|
-| `similarityThreshold` | 0.3   | 벡터 검색 최소 유사도               |
-| `topK`                | 3     | 검색할 최대 문서 수                |
+| 설정                    | 기본값   | 설명                       |
+|-----------------------|-------|--------------------------|
+| `similarityThreshold` | 0.3   | 벡터 검색 최소 유사도             |
+| `topK`                | 3     | 검색할 최대 문서 수              |
 | `allowEmptyContext`   | false | 검색 결과 없을 시 "정보 없음" 응답 반환 |
-| `chunkSize`           | 200   | 텍스트 분할 크기 (문자 수)           |
-| `chunkOverlap`        | 100   | 청크 간 겹침 (문자 수)             |
-| `maxMessages`         | 10    | 대화 메모리에 유지할 최대 메시지 수       |
-| `temperature`         | 0.0   | LLM 응답 결정성 (0 = 결정적)       |
+| `chunkSize`           | 200   | 텍스트 분할 크기 (문자 수)         |
+| `chunkOverlap`        | 100   | 청크 간 겹침 (문자 수)           |
+| `maxMessages`         | 10    | 대화 메모리에 유지할 최대 메시지 수     |
+| `temperature`         | 0.0   | LLM 응답 결정성 (0 = 결정적)     |
 
 ## 설정 파일 (application.yml)
 
@@ -212,4 +211,4 @@ app:
 
 ## 참조
 
-- [RAG 설정 상세 문서](Ragconfig.md)
+- [Ragconfig.md](src/main/java/com/example/rag_chat/config/Ragconfig.md)
