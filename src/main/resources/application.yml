@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: rag-chat
+
+  elasticsearch:
+    uris: http://localhost:9200
+
+  ai:
+    model:
+      chat: ollama
+      embedding: ollama
+
+    ollama:
+      chat:
+        options:
+          model: hf.co/rippertnt/HyperCLOVAX-SEED-Text-Instruct-1.5B-Q4_K_M-GGUF
+      embedding:
+        options:
+          model: bge-m3
+      init:
+        pull-model-strategy: when_missing
+
+    vectorstore:
+      elasticsearch:
+        initialize-schema: true
+        index-name: spring-ai-document-index
+        dimensions: 1024
+        similarity: cosine
+
+app:
+  rag:
+    documents-location-pattern: classpath:rag-test-file.pdf
+
+  vectorstore:
+    in-memory:
+      enabled: false
+
+  etl:
+    pipeline:
+      init: false
+
+  cli:
+    enabled: false
+    filter-expression: ""
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: debug
